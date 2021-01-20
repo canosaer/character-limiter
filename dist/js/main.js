@@ -1,4 +1,2 @@
-"use strict";
-
-console.log("Hello World from main.js! \nChange this message, and make sure it changes in the browser \nto verify that you're working in the right files.");
+const allInputFields=document.querySelectorAll("[data-limit]");allInputFields.forEach((l=>{new CharLimiter(l,l.dataset)}));
 //# sourceMappingURL=main.js.map

@@ -1,0 +1,2 @@
+class CharLimiter{element=null;options={};DEFAULTS={limits:10,messageColor:"red"};constructor(e,t={}){this.element=e,this.options={...this.DEFAULTS,...t},this.options.limit=parseInt(this.options.limit),console.log("CharLimiter()",e,t,this.options),this.setup()}setup(){const e=document.createElement("span");e.classList.add("message"),e.textContent=`${this.options.limit} chars left`,this.element.parentNode.appendChild(e),this.element.addEventListener("keyup",this.handleKeyUp),handleKeyUp=e=>{this.element.value.length;console.length()}}}
+//# sourceMappingURL=char-limiter.js.map

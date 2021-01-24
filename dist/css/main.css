@@ -153,10 +153,6 @@ table {
   box-sizing: border-box;
 }
 
-body {
-  background: #ccc;
-}
-
 /* 2. Content ================================= */
 .message {
   font-size: 0.75rem;

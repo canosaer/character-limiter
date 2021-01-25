@@ -14,31 +14,31 @@
 
 <body>
 
-	<!-- <form>
-		<p>
-			<strong>Requirements:</strong>
-			<ul>
-				<li>don't do anything if data-limit attribute is not present</li>
-				<li>add "X chars left" next to the input field</li>
-				<li>update the chars left as the user enters them</li>
-				<li>turn the message red (by default) when < 10 are left</li>
-				<li>prevent further entry when limit is reached</li>
-				<li>allow override of message color</li>
-			</ul>
-		</p>
-		<p>
-			<label>Name</label>
-			<input name="name" data-limit="25" />
-		</p>
-		<p>
-			<label>Email</label>
-			<input name="email" />
-		</p>
-		<p>
-			<label>Message</label>
-			<textarea name="message" data-limit="200"></textarea>
-		</p>
-	</form> -->
+
+	<header class="header">
+		<h1 class="header__text">Messenger</h1>
+	</header>
+
+	<form class="compose">
+		<div class="input-row">
+			<label class="input-row__text">Name: </label>
+			<input class="input-row__input" name="name" data-limit="25" />
+			<p class="char-usage char-usage_name">
+				<span class="char-usage__count char-usage__count_name"></span> chars left
+			</p>
+		</div>
+		<div class="input-row">
+			<label class="input-row__text">Email: </label>
+			<input type="email" class="input-row__input" name="email" />
+		</div>
+		<div class="message-field">
+			<textarea name="message" class="message-field__input" data-limit="200"></textarea>
+			<p class="char-usage char-usage_message">
+				<span class="char-usage__count char-usage__count_message"></span> chars left
+			</p>
+		</div>
+		<button class="compose__send-button">Send Message</button>
+	</form>
 
 	<script src="dist/js/char-limiter.js"></script>
 	<script src="dist/js/main.js"></script>

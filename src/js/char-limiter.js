@@ -12,8 +12,9 @@ class CharLimiter{
     element = null
     options = {}
     DEFAULTS = {
-        limits: 10,
-        messageColor: `red`
+        limit: 10,
+        messageColor: `red`,
+        warningAt: 10
     }
 
     /**
@@ -32,27 +33,38 @@ class CharLimiter{
         }
         this.options.limit = parseInt(this.options.limit)
 
-        console.log(`CharLimiter()`, element, options, this.options)
-
         this.setup()
     }
 
     setup() {
         // add a new message field to the DOM
-        const message = document.createElement(`span`)
-        message.classList.add(`message`)
-        message.textContent = `${this.options.limit} chars left`
-        this.element.parentNode.appendChild(message)
+        // const message = document.createElement(`span`)
+        // message.classList.add(`message`)
+        // message.textContent = `${this.options.limit} chars left`
+        // this.element.parentNode.appendChild(message)
 
         // setup an event listener on the input element
-        this.element.addEventListener(`keyup`, this.handleKeyUp)
 
-        handleKeyUp = (evt) => {
-            // console.log(`keyup`, evt, this)
+        const charUsageSpans = document.querySelectorAll(`.char-usage__count`)
+        const allINPUTS = document.querySelectorAll(`[data-limit]`)
 
+        let j=0
+
+        for(let i=0;i<allINPUTS.length;i++){
+            charUsageSpans[i].textContent = allINPUTS[i].dataset.limit
+        }
+
+        this.handleKeyUp = (evt) => {
             const curValue = this.element.value
             const curCount = curValue.length
-            console.length()
+            for(let i=0;i<allINPUTS.length;i++){
+                if (allINPUTS[i] === this.element) {j=i}
+            }
+            charUsageSpans[j].textContent = this.options.limit - curCount;
         }
+
+        this.element.addEventListener(`keyup`, this.handleKeyUp)
+
+       
     }
 }

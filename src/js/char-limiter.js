@@ -91,7 +91,7 @@ class CharLimiter{
                     }
                 }
             }
-            else if(charsLeft > this.options.warningAt){ 
+            else{ 
                 if (charUsagePs[j].style.color != defaultMessageColor){
                     charUsagePs[j].style.color = defaultMessageColor
                 }

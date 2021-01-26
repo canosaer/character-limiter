@@ -83,6 +83,7 @@ class CharLimiter{
                         allINPUTS[j].style.backgroundColor = this.options.messageColor
                     }
                     allINPUTS[j].value = this.element.value.substring(0,this.options.limit)
+                    charUsageSpans[j].textContent = 0
                 }
                 else{
                     if (allINPUTS[j].style.backgroundColor != defaultInputColor){
